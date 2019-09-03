@@ -10,6 +10,7 @@ import { EventQueueComponent } from './components/event-queue.component';
 import { LogoComponent } from './components/logo.component';
 import { JsLogoComponent } from './components/js-logo.component';
 import { HeavyBoundComponent } from './components/heavy-bound.component';
+import { GlobalListenersComponent } from './components/global-listeners.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeavyBoundComponent } from './components/heavy-bound.component';
     ChangeDetectionComponent,
     HeavyBindingComponent,
     EventQueueComponent,
-    HeavyBoundComponent
+    HeavyBoundComponent,
+    GlobalListenersComponent
   ],
   imports: [
     BrowserModule,
