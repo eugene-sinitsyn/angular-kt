@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
     <a [routerLink]="['event-queue']">Event loop & event queue</a>
     <a [routerLink]="['change-detection']">Change detection</a>
     <a [routerLink]="['heavy-binding']">Heavy binding</a>
+    <a [routerLink]="['global-listeners']">Global listeners</a>
 
     <div class="content">
       <router-outlet></router-outlet>

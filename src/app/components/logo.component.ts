@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
     `,
     styles: [`
         :host { display: inline-block; }
-        img { animation: rotation 5s infinite linear; margin: 80px; }
+        img { animation: rotation 5s infinite linear; margin: 40px; }
         @keyframes rotation {
             from { transform: rotate(0deg); }
             to { transform: rotate(359deg); }

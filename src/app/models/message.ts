@@ -1,8 +1,8 @@
-import { Urgency } from './urgency';
+import { Priority } from './priority';
 
 export class Message {
     public constructor(
-        public urgency: Urgency,
+        public priority: Priority,
         public text: string
     ) {}
 }

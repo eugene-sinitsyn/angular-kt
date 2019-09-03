@@ -24,6 +24,6 @@ export class EventQueueComponent {
     }
 
     public doDumbWork(): void {
-        this.dumbWorkService.doDumbWork();
+        this.dumbWorkService.doaLotOfDumbWork();
     }
 }
