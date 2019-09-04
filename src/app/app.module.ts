@@ -15,6 +15,7 @@ import { AsyncComponent } from './components/async.component';
 import { UnstableComponent } from './components/unstable.component';
 import { OnPushImmutableComponent } from './components/on-push-immutable.component';
 import { OnPushComponent } from './components/on-push.component';
+import { LongRunningCalculationComponent } from './components/long-running-calculation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { OnPushComponent } from './components/on-push.component';
     AsyncComponent,
     UnstableComponent,
     OnPushImmutableComponent,
-    OnPushComponent
+    OnPushComponent,
+    LongRunningCalculationComponent
   ],
   imports: [
     BrowserModule,

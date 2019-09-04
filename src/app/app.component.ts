@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
     <a [routerLink]="['async']">Async</a>
     <a [routerLink]="['unstable']">Unstable property</a>
     <a [routerLink]="['on-push']">On-push strategy</a>
+    <a [routerLink]="['long-running']">Long running calculation</a>
 
     <div class="content">
       <router-outlet></router-outlet>

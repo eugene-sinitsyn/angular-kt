@@ -8,6 +8,7 @@ import { GlobalListenersComponent } from './components/global-listeners.componen
 import { AsyncComponent } from './components/async.component';
 import { UnstableComponent } from './components/unstable.component';
 import { OnPushComponent } from './components/on-push.component';
+import { LongRunningCalculationComponent } from './components/long-running-calculation.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'global-listeners', component: GlobalListenersComponent },
   { path: 'async', component: AsyncComponent },
   { path: 'unstable', component: UnstableComponent },
-  { path: 'on-push', component: OnPushComponent }
+  { path: 'on-push', component: OnPushComponent },
+  { path: 'long-running', component: LongRunningCalculationComponent }
 ];
 
 @NgModule({
