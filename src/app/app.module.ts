@@ -11,6 +11,7 @@ import { LogoComponent } from './components/logo.component';
 import { JsLogoComponent } from './components/js-logo.component';
 import { HeavyBoundComponent } from './components/heavy-bound.component';
 import { GlobalListenersComponent } from './components/global-listeners.component';
+import { AsyncComponent } from './components/async.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GlobalListenersComponent } from './components/global-listeners.componen
     HeavyBindingComponent,
     EventQueueComponent,
     HeavyBoundComponent,
-    GlobalListenersComponent
+    GlobalListenersComponent,
+    AsyncComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
     <a [routerLink]="['change-detection']">Change detection</a>
     <a [routerLink]="['heavy-binding']">Heavy binding</a>
     <a [routerLink]="['global-listeners']">Global listeners</a>
+    <a [routerLink]="['async']">Async</a>
 
     <div class="content">
       <router-outlet></router-outlet>
