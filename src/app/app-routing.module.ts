@@ -6,6 +6,8 @@ import { HeavyBindingComponent } from './components/heavy-binding.component';
 import { EventQueueComponent } from './components/event-queue.component';
 import { GlobalListenersComponent } from './components/global-listeners.component';
 import { AsyncComponent } from './components/async.component';
+import { UnstableComponent } from './components/unstable.component';
+import { OnPushComponent } from './components/on-push.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'change-detection', component: ChangeDetectionComponent },
   { path: 'heavy-binding', component: HeavyBindingComponent },
   { path: 'global-listeners', component: GlobalListenersComponent },
-  { path: 'async', component: AsyncComponent }
+  { path: 'async', component: AsyncComponent },
+  { path: 'unstable', component: UnstableComponent },
+  { path: 'on-push', component: OnPushComponent }
 ];
 
 @NgModule({

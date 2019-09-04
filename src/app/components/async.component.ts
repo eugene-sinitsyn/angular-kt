@@ -5,7 +5,7 @@ import { Subject, Subscription } from 'rxjs';
 @Component({
     selector: 'kt-async',
     template: `
-        <p>{{heavyProperty}}</p>
+        <p [style.color]="'red'">{{heavyProperty}}</p>
         <button (click)="doSomething()">Do something</button>
         <button (click)="doSomethinSetTimeout0()">Set timeout 0</button>
         <button (click)="doSomethingPromise()">Promise</button>
@@ -27,7 +27,7 @@ export class AsyncComponent implements OnInit, OnDestroy {
 
     public get heavyProperty(): string {
         this.dumbWorkService.doDumbWork();
-        return 'I am heavy to calculate';
+        return 'I am heavy to calculate!';
     }
 
     public ngOnInit(): void {
@@ -69,7 +69,6 @@ export class AsyncComponent implements OnInit, OnDestroy {
     public async doSomethingAsyncAwait(): Promise<void> {
         this.dumbWorkService.doDumbWork();
         await this.shortAsyncFunction();
-        // await this.longAsyncFunction();
         this.dumbWorkService.doDumbWork();
     }
 

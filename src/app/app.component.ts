@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
     <a [routerLink]="['heavy-binding']">Heavy binding</a>
     <a [routerLink]="['global-listeners']">Global listeners</a>
     <a [routerLink]="['async']">Async</a>
+    <a [routerLink]="['unstable']">Unstable property</a>
+    <a [routerLink]="['on-push']">On-push strategy</a>
 
     <div class="content">
       <router-outlet></router-outlet>

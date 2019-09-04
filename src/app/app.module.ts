@@ -12,6 +12,9 @@ import { JsLogoComponent } from './components/js-logo.component';
 import { HeavyBoundComponent } from './components/heavy-bound.component';
 import { GlobalListenersComponent } from './components/global-listeners.component';
 import { AsyncComponent } from './components/async.component';
+import { UnstableComponent } from './components/unstable.component';
+import { OnPushImmutableComponent } from './components/on-push-immutable.component';
+import { OnPushComponent } from './components/on-push.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { AsyncComponent } from './components/async.component';
     EventQueueComponent,
     HeavyBoundComponent,
     GlobalListenersComponent,
-    AsyncComponent
+    AsyncComponent,
+    UnstableComponent,
+    OnPushImmutableComponent,
+    OnPushComponent
   ],
   imports: [
     BrowserModule,
