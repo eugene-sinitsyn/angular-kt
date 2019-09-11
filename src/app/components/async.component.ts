@@ -1,6 +1,6 @@
 import { Component, NgZone, OnInit, OnDestroy } from "@angular/core";
 import { DumbWorkService } from '../services/dumb-work.service';
-import { Subject, Subscription } from 'rxjs';
+import { Subject, Subscription, BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'kt-async',
@@ -13,6 +13,7 @@ import { Subject, Subscription } from 'rxjs';
         <button (click)="doSomethingOutsideNgZone()">Outside Angular zone</button>
         <button (click)="doSomethingAsyncAwait()">Immediate async/await</button>
         <button (click)="doSomethingAsyncLongAwait()">Long running async/await</button>
+        <button (click)="subscribeOnBehaviorSubject()">Subscribe on behavior subject</button>
     `,
     styles: ['button { margin: 5px; }']
 })
@@ -23,7 +24,9 @@ export class AsyncComponent implements OnInit, OnDestroy {
     ) {}
 
     private readonly subject: Subject<string> = new Subject<string>();
-    private subscription: Subscription;
+    private subscription1: Subscription;
+    private behaviorSubject: BehaviorSubject<string> = new BehaviorSubject<string>('initial value');
+    private subscription2: Subscription;
 
     public get heavyProperty(): string {
         this.dumbWorkService.doDumbWork();
@@ -31,13 +34,15 @@ export class AsyncComponent implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        this.subscription = this.subject
+        this.subscription1 = this.subject
             .subscribe(value => this.handleSubscription(value));
     }
 
     public ngOnDestroy(): void {
-        this.subscription.unsubscribe();
-        this.subscription = null;
+        this.subscription1.unsubscribe();
+        this.subscription1 = null;
+        this.subscription2.unsubscribe();
+        this.subscription2 = null;
     }
 
     public doSomething(): void {
@@ -57,6 +62,7 @@ export class AsyncComponent implements OnInit, OnDestroy {
     public doSomethingObservable(): void {
         this.dumbWorkService.doDumbWork();
         this.subject.next('observable value');
+        this.dumbWorkService.doDumbWork();
     }
 
     public doSomethingOutsideNgZone(): void {
@@ -75,6 +81,15 @@ export class AsyncComponent implements OnInit, OnDestroy {
     public async doSomethingAsyncLongAwait(): Promise<void> {
         this.dumbWorkService.doDumbWork();
         await this.longAsyncFunction();
+        this.dumbWorkService.doDumbWork();
+    }
+
+    public subscribeOnBehaviorSubject(): void {
+        this.dumbWorkService.doDumbWork();
+        this.behaviorSubject.subscribe(s => {
+            console.log(s);
+            this.dumbWorkService.doDumbWork();
+        });
         this.dumbWorkService.doDumbWork();
     }
 
