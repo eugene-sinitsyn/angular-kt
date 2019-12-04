@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { Subscription } from 'rxjs';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
@@ -28,14 +28,18 @@ import { DumbWorkService } from '../services/dumb-work.service';
         </p>
     `
 })
-export class GlobalListenersComponent {
+export class GlobalListenersComponent implements OnDestroy {
     public constructor(
         private readonly dumbWorkService: DumbWorkService,
-        private readonly messageService: MessageService
+        private readonly messageService: MessageService,
     ) {}
 
     public messageSubscription: Subscription;
     public criticalMessages: Message[] = [];
+
+    public ngOnDestroy(): void {
+        this.disconnect();
+    }
 
     public get heavyProperty(): string {
         this.dumbWorkService.doDumbWork();
@@ -49,8 +53,10 @@ export class GlobalListenersComponent {
 
     public disconnect(): void {
         this.messageService.disconnect();
-        this.messageSubscription.unsubscribe();
-        this.messageSubscription = null;
+        if (this.messageSubscription) {
+            this.messageSubscription.unsubscribe();
+            this.messageSubscription = null;
+        }
     }
 
     private handleMessage(message: Message): void {

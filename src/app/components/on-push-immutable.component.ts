@@ -5,7 +5,7 @@ import { DumbWorkService } from '../services/dumb-work.service';
   selector: 'kt-on-push-immutable',
   template: `
     <p [style.color]="'red'">{{heavyProperty}}</p>
-    <p>{{input?.date}}</p>
+    <p>{{input?.date | json}}</p>
 
     <button (click)="markForCheck()">
       Mark for check
@@ -22,21 +22,19 @@ export class OnPushImmutableComponent {
     private readonly dumbWorkService: DumbWorkService
   ) {}
 
-  @Input() public input: object = {};
+  @Input() public input: { date?: Date } = {};
 
   public get heavyProperty(): string {
-    this.dumbWorkService.doDumbWork();
+    this.dumbWorkService.doABitOfDumbWork();
     return 'I am heavy to calculate!';
   }
 
   public markForCheck(): void {
-    this.input['date'] = new Date();
     this.changeDetectorRef.markForCheck();
     console.log('marked for check');
   }
 
   public detectChanges(): void {
-    this.input['date'] = new Date();
     console.log('running change detection');
     this.changeDetectorRef.detectChanges();
   }

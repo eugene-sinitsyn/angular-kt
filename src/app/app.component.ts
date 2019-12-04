@@ -19,5 +19,4 @@ import { Component } from '@angular/core';
   `,
   styles: ['a { padding: 5px; } .content { padding: 20px 5px; }']
 })
-export class AppComponent {
-}
+export class AppComponent {}

@@ -18,15 +18,15 @@ export class OnPushComponent {
     private readonly dumbWorkService: DumbWorkService
   ) {}
 
-  public immutableInput: object = {};
+  public immutableInput: { date?: Date } = {};
 
   public get heavyProperty(): string {
-    this.dumbWorkService.doDumbWork();
+    this.dumbWorkService.doABitOfDumbWork();
     return 'I am heavy to calculate!';
   }
 
   public mutate(): void {
-    this.immutableInput['date'] = new Date();
+    this.immutableInput.date = new Date();
     console.log('input mutated');
   }
 

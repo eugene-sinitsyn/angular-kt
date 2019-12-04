@@ -41,4 +41,4 @@ import { LongRunningCalculationComponent } from './components/long-running-calcu
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
