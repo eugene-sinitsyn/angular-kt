@@ -4,7 +4,7 @@ import { DumbWorkService } from '../services/dumb-work.service';
 @Component({
   selector: 'kt-on-push-immutable',
   template: `
-    <p [style.color]="'red'">{{heavyProperty}}</p>
+    <p class="heavy">{{heavyProperty}}</p>
     <p>{{input?.date | json}}</p>
 
     <button (click)="markForCheck()">

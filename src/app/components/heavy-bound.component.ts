@@ -5,13 +5,13 @@ import { Item } from '../models/item';
     selector: 'kt-heavy-bound',
     template: `
         <!-- binding 1 -->
-        <p [style.color]="'green'">Items: {{itemsCount}}</p>
+        <p class="light">Items: {{itemsCount}}</p>
         <!-- binding 2 (heavy) -->
-        <p [style.color]="'red'">Awesome items: {{awesomeItemsCount}}</p>
+        <p class="heavy">Awesome items: {{awesomeItemsCount}}</p>
         <!-- binding 3 (heavy) -->
-        <p [style.color]="'red'">Awesomness percentage: {{awesomnessPercentage}}</p>
+        <p class="heavy">Awesomness percentage: {{awesomnessPercentage}}</p>
         <!-- binding 4 (heavy) -->
-        <p [style.color]="'red'">Awesomeness rate: {{awesomenessRate}}</p>
+        <p class="heavy">Awesomeness rate: {{awesomenessRate}}</p>
     `
 })
 export class HeavyBoundComponent {

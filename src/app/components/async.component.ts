@@ -5,7 +5,7 @@ import { Subject, Subscription, BehaviorSubject } from 'rxjs';
 @Component({
     selector: 'kt-async',
     template: `
-        <p [style.color]="'red'">{{heavyProperty}}</p>
+        <p class="heavy">{{heavyProperty}}</p>
         <button (click)="doSomething()">Do something</button>
         <button (click)="doSomethinSetTimeout0()">Set timeout 0</button>
         <button (click)="doSomethingPromise()">Immediate Promise</button>

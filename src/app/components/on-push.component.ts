@@ -4,7 +4,7 @@ import { DumbWorkService } from '../services/dumb-work.service';
 @Component({
   selector: 'kt-on-push',
   template: `
-    <p [style.color]="'red'">{{heavyProperty}}</p>
+    <p class="heavy">{{heavyProperty}}</p>
 
     <button (click)="mutate()">Mutate</button>
     <button (click)="replace()">Replace</button>

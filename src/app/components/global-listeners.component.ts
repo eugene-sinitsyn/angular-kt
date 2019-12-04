@@ -11,7 +11,7 @@ import { DumbWorkService } from '../services/dumb-work.service';
         <kt-logo></kt-logo>
         <kt-js-logo></kt-js-logo>
         <br />
-        <p [style.color]="'red'">{{heavyProperty}}</p> <!-- heavy binding -->
+        <p class="heavy">{{heavyProperty}}</p> <!-- heavy binding -->
 
         <button
             (click)="connect()"
