@@ -1,8 +1,8 @@
 export enum Priority {
-    lowest,
-    low,
-    average,
-    high,
-    urgent,
-    critical
+  lowest,
+  low,
+  average,
+  high,
+  urgent,
+  critical
 }
