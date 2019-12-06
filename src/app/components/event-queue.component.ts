@@ -8,15 +8,23 @@ import { DumbWorkService } from '../services/dumb-work.service';
     <kt-js-logo></kt-js-logo>
     <p id="paragraph">I'm a paragraph.</p>
 
+    <p>Vanilla JS</p>
     <button onclick="document.getElementById('paragraph').innerText = 'JS!'">
-      Do some javascript
+      Do some vanilla JS
     </button>
-    <button onclick="Promise.resolve().then(() => document.getElementById('paragraph').innerText = 'JS MT!')">
-      MT from vanilla JS!
+    <button onclick="Promise.resolve().then(function MT() { document.getElementById('paragraph').innerText = 'JS MT!'; })">
+      Do some vanilla JS in microtask
     </button>
-    <button (click)="doSomething()">Do some angular</button>
-    <button (click)="doMicroTask()">Do some angular in microtask</button>
-    <button (click)="scheduleMtFromMt()">Schedule MT from MT</button>
+    <button onclick="Promise.resolve().then(function MT1() { document.getElementById('paragraph').innerText = 'JS MT1!'; Promise.resolve().then(function MT2() { document.getElementById('paragraph').innerText = 'JS MT2!' + new Date(); console.dir(new Date()); }); })">
+      Schedule microtask from vanilla JS microtask
+    </button>
+
+    <p>Ng</p>
+    <button (click)="doSomething()">Do some Angular</button>
+    <button (click)="doMicroTask()">Do some Angular in microtask</button>
+    <button (click)="scheduleMtFromMt()">Schedule microtask from Angular microtask</button>
+
+    <p>Loop starvation</p>
     <button (click)="doDumbWork()">Starve the event loop!</button>
   `,
   styles: ['button { margin: 5px; } #paragraph { border: 1px solid black; padding: 5px; }']
